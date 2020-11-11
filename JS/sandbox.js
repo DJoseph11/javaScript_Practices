@@ -16,9 +16,14 @@
 function hello() {
     var a = " hello world ";
 }
-// the variable "a" sits lexical or where its physically sits inside the function
-// in the code above, before it is executed it pass through a syntax parser to machine
-// language and the computer stores that in memory and where you see things written
+// the variable (a) above sits lexical or where its sits physically inside the function
+// in the code above, before it is executed it pass through a syntax parser to compile
+// into machine language and the computer stores that in memory and where you see things written
 // can let you have an idea of where it will fit in memory.
-//
-//
+
+
+/*Execution context is a wrapper to help manage the code that is running.
+*there are a lot of lexical environments */
+
+
+
