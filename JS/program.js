@@ -98,4 +98,31 @@ myObject.increment(2);
 console.log(document.writeln(myObject.increment(2)));     // 3
 
 
+/// Arguments
+
+const sum = function () {
+	let i, sum = 0;
+	for (i = 0; i  <  arguments.length; i++) {
+		sum += arguments[i];
+	}
+	return sum;
+}
+
+document.writeln(sum(3, 3, 5, 5, 6,)); // 22
+
+/// Exceptions
+
+const addFunc = function (a, b) {
+	if (typeof a !== "number" || typeof b !== "number") {
+		throw {
+			name: "Type error"
+			message: "AddFunc needs numbers."  /// Uncaught SyntaxError: Unexpected identifier.
+		};
+	}
+	return a + b;
+}
+
+document.writeln(addFunc(2, 3));
+
+
 
