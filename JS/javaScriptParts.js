@@ -15,9 +15,9 @@
 
 // Global environment and the global object
 
-/*  Whenever Js codes runs it runs inside an execution context meaning that the javascript engine wrap your code
+/*  Whenever Js codes runs, it runs inside an execution context meaning that the javascript engine wrap your code
 *   and do its thing,like parsing and such.
 *   And the base execution context is the global execution context.
 *
-*   the context create two things in the process it creates a " global object " and " this "
+*   the context create two things in the process it creates a " global object " which called and " this "
 *    */

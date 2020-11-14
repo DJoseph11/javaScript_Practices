@@ -5,7 +5,7 @@ document.writeln("Hello World");
 /*variable names are used for statements, variables, parameters,
 property names, operators, and labels.*/
 
-/*THe (&&) or and operator produces the value of its first operand
+/*THe (&&) or "and" operator produces the value of its first operand
 * if the first operand is falsy. Otherwise, it produces the value of
 * the second operand
 *
@@ -16,6 +16,14 @@ property names, operators, and labels.*/
 // There are 6 object literals that is known right now they as follow
 // number literal, string literal, object literal, array literal,
 // function literal, and regexp literal.
+
+
+
+function d (b, c) {
+	/*--------*/
+}
+
+a.length
 
 
 //-------------------------------------------------Object literal------------------------------
