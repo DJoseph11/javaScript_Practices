@@ -13,7 +13,7 @@ property names, operators, and labels.*/
 * the first operand is truthy. Otherwise, its produces the value of the
 * second operand.*/
 
-// There are 6 object literals tha is known right now they as follow
+// There are 6 object literals that is known right now they as follow
 // number literal, string literal, object literal, array literal,
 // function literal, and regexp literal.
 
@@ -115,7 +115,7 @@ document.writeln(sum(3, 3, 5, 5, 6,)); // 22
 const addFunc = function (a, b) {
 	if (typeof a !== "number" || typeof b !== "number") {
 		throw {
-			name: "Type error"
+			name: "Type error",         // <----- was missing the comma.
 			message: "AddFunc needs numbers."  /// Uncaught SyntaxError: Unexpected identifier.
 		};
 	}
@@ -123,6 +123,7 @@ const addFunc = function (a, b) {
 }
 
 document.writeln(addFunc(2, 3));
+
 
 
 
