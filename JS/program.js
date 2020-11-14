@@ -26,6 +26,50 @@ function d (b, c) {
 a.length
 
 
+function d(a, b) {
+	//the body of the function
+}
+
+// function object has a length property to the number og parameters.
+
+d.length
+
+// and using the length property I see the outcome to be as expected which is two
+
+
+typeof [1, 2, 3] === "object"
+
+
+;
+
+
+var e = 87;
+
+// (typeof variable) by itself will endup being "undefined"
+// but if it has a value then it identify the type of the value
+// stored in the variable.
+
+
+typeof e;  // result "number";
+
+e = true;
+
+typeof e;  // the result "boolean"
+
+e = null;
+
+typeof e;  // the result "object"
+
+e = "Win";
+
+typeof e;  // the result "string"
+
+// typeof variable;
+
+
+
+
+
 //-------------------------------------------------Object literal------------------------------
 
 const apartment = {
