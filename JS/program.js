@@ -67,6 +67,68 @@ typeof e;  // the result "string"
 // typeof variable;
 
 
+// var a;
+
+// a;
+// b;
+
+/// "var a" once execute we would expect "undefined"
+/// but b" on the other hand didnt get declared so the brower would
+//  gives a reference error, in order to get rid of the error just
+// declared before being called such as " var b; to get undefined"
+// or "var b = true" would result in boolean for its value.
+
+// typeof a;  // result in "undefined".
+// typeof b;
+
+// // to do a safe check if it exist.
+// if (typeof abc === "undefined") {
+//     abc = function () {
+
+//     }
+// }
+
+if (window) {
+	///
+}
+
+function doSomething() {
+	var helper =
+		(typeof FeatureXYZ !== "undefined");
+	FeatureXYZ :
+		function() {
+			//// default feature here
+		}
+	var val = helper();
+}
+
+//// the function check for a variable called
+//// FeatureXYZ if found use it if not dont use it
+
+/// an IIfE can be created this function which is called
+// "Immediatly Invoked Function Expression"
+
+(function() {
+	function FeatureXYZ() {
+
+	}
+	function doSomething() {
+		var helper =
+			(typeof FeatureXYZ !== "undefined");
+		FeatureXYZ :
+			function() {
+				//// default feature here
+			}
+		var val = helper();
+	}
+	doSomething();
+
+})();
+
+
+
+
+
 
 
 
