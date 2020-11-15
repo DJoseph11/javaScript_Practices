@@ -198,12 +198,80 @@ console.log(bigArr)                 //expected result breaking down the string "
 
 ///Strings----------------------
 
+/*javaScript strings are immutable which means that it not changeable while arrays are mutable the reason for that is
+* string and array both seems alike both has an indexOf() method, a .length property, and the concat() method.
+* immutable string cannot use any of the  string methods to change values in place but instead has to to be created
+* and returned the new string. Arrays has many methods that can modify it in place.*/
+
+// many of the array method are not available to strings even though they
+// feel and act alike each other but by using the nonmutation array methods thats available
+// we borrow they effects.
+
+
+a = "good";
+b = "GOOD";
+
+var c = Array.prototype.join.call(a, "-")
+
+// console.log(c);
+
+var d = Array.prototype.map.call(a, function(x) {
+	return x.toUpperCase() + " * ";                  // result ["G,", "O,", "O,", "D,"]
+});                                                 // without using join()
+
+
+
+console.log(d);
+
+var d = Array.prototype.map.call(a, function(x) {
+	return x.toUpperCase() + " * ";                 //.join() gives you an output of
+}).join();                                          // G * ,O * ,O * ,D *
+
+
+// numbers------------------
+
+// number values can be boxed with the number object wrapper and number values
+// can access built in methods "toFixed()"
+
+var a = 50;
+
+a.toFixed(1); // "50"
+a.toFixed(2); // "50.00" two decimal points.
+a.toFixed(3); // "50.000" three decimal points.
 
 
 
 
+// the output of toFixed() method though has an output of the numbers within string.
 
-/*javaScript strings are immutable which means it changeable while arrays are mutable*/
+var a = 42.59;
+a.toPrecision( 1 ); // "4e+1"
+a.toPrecision( 2 ); // "43"
+a.toPrecision( 3 ); // "42.6"
+a.toPrecision( 4 ); // "42.59"
+a.toPrecision( 5 ); // "42.590"
+a.toPrecision( 6 ); // "42.5900"
+
+
+var a = 29.34;
+a.toPrecision( 1 ); // "3e+1"
+a.toPrecision( 2 ); // "29"
+a.toPrecision( 3 ); // "29.2"        // by using toPrecision(3) thats when the value .0 decimal place
+a.toPrecision( 4 ); // "29.24"
+a.toPrecision( 5 ); // "29.240"
+a.toPrecision( 3 ); // "29.2400"
+
+/* toFixed as can see above is similar behavior to toPrecision for example both shoots out
+strings for they output*/
+
+// 50.toFixed(3);     // this would give you a SyntaError: Invalid or unexpected token.
+
+(50).toFixed(3);      // is a valid syntax, the previous code has the number in front " . "
+                      // from ".toFixed()" would gives a token error. by adding paretheses to
+                      // the number would makes it valid so does decimal points and adding
+50..toFixed(3);           // another " . " in front of " .toFixed() " would also makes it vallid
+
+
 
 
 
