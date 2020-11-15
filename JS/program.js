@@ -175,17 +175,38 @@ f.foobar;
 // indexed values.
 
 function foo() {
-	var arr = Array.prototype.slice.call( arguments ); arr.push( "bam" );
+	var arr = Array.prototype.slice.call( arguments );
+	var number = arr.push("bam");
 	console.log( arr );
 }
 foo( "bar", "baz" );
 
-// by using the slice()utility against the value if slice is called without
+// by using the slice() method/utility y against the value if slice is called without
 // a parameter the default values can end up duplicating an array-like objects
 
-// theres also is new built in utility called Array.from( )
+// theres also a built in method/utility called Array.from( ) that can do the same thing.
 
-var arr = Array.from( arguments );  // as seen above
+// var arr = Array.from(arguments);  // as seen above
+var bigArr = Array.from("something");
+console.log(bigArr)                 //expected result breaking down the string "something" into an array-like looking
+									// like so. ["s", "o", "m", "e", "t", "h", "i", "n", "g"]
+
+
+
+
+
+
+///Strings----------------------
+
+
+
+
+
+
+/*javaScript strings are immutable which means it changeable while arrays are mutable*/
+
+
+
 
 //-------------------------------------------------Object literal------------------------------
 
