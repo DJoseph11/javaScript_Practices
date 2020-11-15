@@ -125,6 +125,13 @@ function doSomething() {
 
 })();
 
+/* The review for this chapter of understand javaScript has seven built in  types boolean, numbers,
+* string, undefined, null, objects and symbol
+* variables dont have types but the value that stored with them do
+* undefined is not the same as undeclared. Undefined, for example, unassigned variables with no value will give undefined
+* undeclared is a name that was not assigned as a variable which if used typeof once the name is assigned it will give
+* "undefined". To get out of that a value would need to be assigned in which case taking the typeof now would give you
+* one of the seven built in types.  */
 
 
 
