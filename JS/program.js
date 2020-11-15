@@ -152,14 +152,41 @@ a[0] === 1;              // expect true
 a[2][0] === 3;           //expecting true because a[2] index in the array is
                          // the array at that index and within that array
                          // at index [0] is 3 hence true
-var e = [ ];
+var j = [ ];
 a.length;
 
-a[0] = 1;
-a[1] = 2;
+j[0] = 1;
+j[1] = 2;
 a[2] = [3]
 
 a.length
+
+//arrays are numerically indexed and they are also objectd that can have strings
+
+var f = [ ];
+f[0] = 1;
+f["foobar"] = 2;
+
+f.length;
+f["foobar"];
+f.foobar;
+
+//use objects for holding values in keys/properties and use array to store numerically
+// indexed values.
+
+function foo() {
+	var arr = Array.prototype.slice.call( arguments ); arr.push( "bam" );
+	console.log( arr );
+}
+foo( "bar", "baz" );
+
+// by using the slice()utility against the value if slice is called without
+// a parameter the default values can end up duplicating an array-like objects
+
+// theres also is new built in utility called Array.from( )
+
+var arr = Array.from( arguments );  // as seen above
+
 //-------------------------------------------------Object literal------------------------------
 
 const apartment = {
