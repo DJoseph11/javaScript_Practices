@@ -264,13 +264,54 @@ a.toPrecision( 3 ); // "29.2400"
 /* toFixed as can see above is similar behavior to toPrecision for example both shoots out
 strings for they output*/
 
-// 50.toFixed(3);     // this would give you a SyntaError: Invalid or unexpected token.
+// 50.toFixed(3); this would give you a SyntaxError: Invalid or unexpected token.
 
 (50).toFixed(3);      // is a valid syntax, the previous code has the number in front " . "
                       // from ".toFixed()" would gives a token error. by adding paretheses to
                       // the number would makes it valid so does decimal points and adding
-50..toFixed(3);           // another " . " in front of " .toFixed() " would also makes it vallid
+50..toFixed(3);           // another " . " in front of " .toFixed() " would also makes it valid
 
+0.1 + 0.2 === 0.3;  // False because these numbers are not actually equal so when added
+                    // the result is not really 0.3
+
+var a = 0.1 + 0.2;
+var b = 0.3;
+
+numherCloseEnoughToEqual(a, b);
+
+
+
+
+
+function numherCloseEnoughToEqual(n1, n2) {
+	return Math.abs(n1 -n2) < Number.EPSILON;
+}
+
+numherCloseEnoughToEqual(0.5, 0.5);    // this end up being true as well.
+
+x = 0.2;
+y = 0.3;
+z = 0.1;
+
+equal = (Math.abs(x - y + z) < Number.EPSILON);    // this code end up being true.
+
+equal = (Math.abs(y - z === x) < Number.EPSILON);  // and this one works as well
+
+// so in order to get decimals,  add the "Number.EPSILON" property. That property
+//used to compare the two numbers.
+
+
+//to test wether a value is an interger
+
+Number.isInteger(36);   // it appears that whole numbers result in true. while number
+                        // with decimals result in false but values like
+                        // "Number.isInteger(36.00)" would result to be true.
+
+
+//theres another method called "Number.isSafeInteger()"";
+
+Number.isSafeInteger(35.01);     // just like Number.isInteger decimal that is above .00
+                                 // will be false.
 
 
 
