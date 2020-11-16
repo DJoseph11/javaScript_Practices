@@ -301,7 +301,7 @@ equal = (Math.abs(y - z === x) < Number.EPSILON);  // and this one works as well
 //used to compare the two numbers.
 
 
-//to test wether a value is an interger
+//to test wether a value is an integer
 
 Number.isInteger(36);   // it appears that whole numbers result in true. while number
                         // with decimals result in false but values like
@@ -314,6 +314,42 @@ Number.isSafeInteger(35.01);     // just like Number.isInteger decimal that is a
                                  // will be false.
 
 
+//SPECIAL VALUES-------
+
+// JS also has special values such as "undefined" type which only has one value and thats
+// "undefined". another special value is "null" type were its value is "null".
+
+
+// we can look at "null" is an empty value and "undefined" is a missing value
+// null is a lack of existence and undefined hasnlt had a value yet.
+
+
+//-----VOID OPERATOR
+/*"undefined" is a JS built in identifier*/
+
+
+var a = 42;
+
+console.log(void a, a);  // by using void it voids out any value and its always undefined
+                         // the existing value doesnt change but ensures that no value
+                         //  comes back from the operator expression
+
+
+// the not number "NaN" stands for "not a number" its a very special value in tha its never
+// equal to another NaN value.
+
+var a = 2 / "hue";
+var b = "hue";
+
+// to safely check NaN values
+
+if (!Number.isNaN) {
+	Number.isNaN = function(n) {
+		return ( typeof n === "number" && window.isNaN(n) );
+	};
+}
+
+Number.isNaN(b)
 
 
 
