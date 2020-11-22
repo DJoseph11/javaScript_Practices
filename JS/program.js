@@ -275,27 +275,56 @@ strings for they output*/
 0.1 + 0.2 === 0.3;  // False because these numbers are not actually equal so when added
                     // the result is not really 0.3
 
-// Data Types
-//
+
+//-----------------------------------------------------------------// Data Types
+
+
+
+
 // In an example :
 // 	Var a = 1;
 // Var b = a++;
 // Var c = ++a
 //
-// In the first line the variable “ a ” holds  or if you prefer contain a value of “ 1 ” pretty simple enough and variable “ b ” with the value of  “ a++ ” for post increment , the “ ++ “ operator  acts as a counter where “ b ”  end up having with a value of  “  1  “   as the initial “  var a = 1  ” keeping  the count in variable “ b “ . Even if the number changes.
+// In the first line the variable “ a ” holds  or if you prefer contain a value of “ 1 ” pretty simple enough and
+// variable “ b ” with the value of  “ a++ ” for post increment , the “ ++ “ operator  acts as a counter where “ b ”
+// end up having with a value of  “  1  “   as the initial “  var a = 1  ” keeping  the count in variable “ b “ .
+// Even if the number changes.
 //
 // 	Var a = 2;        // initial value
 //
-// Var b = a++;  // b = 2  and a = 3  for further  clarity  if  “ a++ ”  execute one more time it would 		       //results  for   b = 3   and   a = 4.  If this was  going on in a loop 4 would be outside of
+// Var b = a++;  // b = 2  and a = 3  for further  clarity  if  “ a++ ”  execute one more time it would
+// results  for   b = 3   and   a = 4.  If this was  going on in a loop 4 would be outside of
 //               // the loop and not be counted.
 //
-// For the variable  “ c “ with the pre increment , it  does not behave the same way as “ b “  by keeping count of the past value of “ a ++“  which was “ 1 “. variable “ c “ becomes evenly match with the same value as pre increment of “ ++a “
+// For the variable  “ c “ with the pre increment , it  does not behave the same way as “ b “  by keeping count of the
+// past value of “ a ++“  which was “ 1 “. variable “ c “ becomes evenly match with the same value as pre increment of
+// “ ++a “
 //
 // Var c = ++a     //   when log this value we can see  “ c “  would equals the value of “ 3 “.  From the data
-// //  above where “ a = 1  “ post increment . When “ b = a++ “  the variable “ b “ has a new    value of “ 1 “  and not  “ 2  “.  In an    another sense, any variable with a post increment (var  name = value ++)  would always end up with  a  gap I think tortoise and hare is a good example the hare is (hare ++) would always leave “  var tortoise  ” behind a certain gap, and the platform for that gap is the initial value that was set up before the increment starts.
+// //  above where “ a = 1  “ post increment . When “ b = a++ “  the variable “ b “ has a new    value of “ 1 “
+// and not  “ 2  “.  In an    another sense, any variable with a post increment (var  name = value ++)  would always
+// end up with  a  gap I think tortoise and hare is a good example the hare is (hare ++) would always
+// leave “ var tortoise ” behind a certain gap, and the platform for that gap is the initial value that was set up
+// before the increment starts.
 
 
+var d = `hello`;
+var e = false;
 
+d++;  // the value that's in the variable " d " is a string since " ++ " is an increment operator of numbers result in
+// (d++)
+
+
+e++; // this interestingly ended being 0 " var e " value is the boolean false which translate in computer language
+// in 1s and 0s so true is " 1 " and false is " 0 "
+
+/// (side notes to me) ;; its amazing how everything that deals with tech bogs down to ones and zeros. all this complex
+/// creation like electronics is just one 1s and 0s. One needs to take a good moment to understand that. we got to this point
+// based on two numbers hahaha one odd one even hahaha true and false, makes me wonder what about the other types that
+// has a counter part such as left and right, up and down , I think it might be possible in the future.
+// Left might be "1" and Right might be "0", UP is "1" and Down "0". Its not possible now since we still programming
+// as if we not living in 3d but on a flat 2d paper plane. its amusing really. Note end
 
 
 
