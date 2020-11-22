@@ -30,22 +30,23 @@ function d(a, b) {
 	//the body of the function
 }
 
-// function object has a length property to the number og parameters.
+// function object has a length property to the number of parameters.
 
 d.length
 
 // and using the length property I see the outcome to be as expected which is two
+// as in a, b
 
 
-typeof [1, 2, 3] === "object"
+//typeof [1, 2, 3] === "object"
 
 
-;
+
 
 
 var e = 87;
 
-// (typeof variable) by itself will endup being "undefined"
+// (typeof variable) by itself will end up being "undefined"
 // but if it has a value then it identify the type of the value
 // stored in the variable.
 
@@ -106,7 +107,7 @@ function doSomething() {
 //// FeatureXYZ if found use it if not dont use it
 
 /// an IIfE can be created this function which is called
-// "Immediatly Invoked Function Expression"
+// "Immediately Invoked Function Expression"
 
 (function() {
 	function FeatureXYZ() {
@@ -267,12 +268,44 @@ strings for they output*/
 // 50.toFixed(3); this would give you a SyntaxError: Invalid or unexpected token.
 
 (50).toFixed(3);      // is a valid syntax, the previous code has the number in front " . "
-                      // from ".toFixed()" would gives a token error. by adding paretheses to
+                      // from ".toFixed()" would gives a token error. by adding parentheses to
                       // the number would makes it valid so does decimal points and adding
 50..toFixed(3);           // another " . " in front of " .toFixed() " would also makes it valid
 
 0.1 + 0.2 === 0.3;  // False because these numbers are not actually equal so when added
                     // the result is not really 0.3
+
+// Data Types
+//
+// In an example :
+// 	Var a = 1;
+// Var b = a++;
+// Var c = ++a
+//
+// In the first line the variable “ a ” holds  or if you prefer contain a value of “ 1 ” pretty simple enough and variable “ b ” with the value of  “ a++ ” for post increment , the “ ++ “ operator  acts as a counter where “ b ”  end up having with a value of  “  1  “   as the initial “  var a = 1  ” keeping  the count in variable “ b “ . Even if the number changes.
+//
+// 	Var a = 2;        // initial value
+//
+// Var b = a++;  // b = 2  and a = 3  for further  clarity  if  “ a++ ”  execute one more time it would 		       //results  for   b = 3   and   a = 4.  If this was  going on in a loop 4 would be outside of
+//               // the loop and not be counted.
+//
+// For the variable  “ c “ with the pre increment , it  does not behave the same way as “ b “  by keeping count of the past value of “ a ++“  which was “ 1 “. variable “ c “ becomes evenly match with the same value as pre increment of “ ++a “
+//
+// Var c = ++a     //   when log this value we can see  “ c “  would equals the value of “ 3 “.  From the data
+// //  above where “ a = 1  “ post increment . When “ b = a++ “  the variable “ b “ has a new    value of “ 1 “  and not  “ 2  “.  In an    another sense, any variable with a post increment (var  name = value ++)  would always end up with  a  gap I think tortoise and hare is a good example the hare is (hare ++) would always leave “  var tortoise  ” behind a certain gap, and the platform for that gap is the initial value that was set up before the increment starts.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 var a = 0.1 + 0.2;
 var b = 0.3;
@@ -321,7 +354,7 @@ Number.isSafeInteger(35.01);     // just like Number.isInteger decimal that is a
 
 
 // we can look at "null" is an empty value and "undefined" is a missing value
-// null is a lack of existence and undefined hasnlt had a value yet.
+// null is a lack of existence and undefined hasn't had a value yet.
 
 
 //-----VOID OPERATOR
@@ -335,7 +368,7 @@ console.log(void a, a);  // by using void it voids out any value and its always 
                          //  comes back from the operator expression
 
 
-// the not number "NaN" stands for "not a number" its a very special value in tha its never
+// the not number "NaN" stands for "not a number" its a very special value in that its never
 // equal to another NaN value.
 
 var a = 2 / "hue";
