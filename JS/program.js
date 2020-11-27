@@ -445,6 +445,40 @@ if (hour >= 6 && hour < 12) {
 // 	}
 
 
+function cutend(str, num) {
+	if( typeof str !== "string" && typeof num !== "number") {
+		return false;
+	} else {
+		var nStr = str.substr(0, str.length - num)
+	}
+	return nStr;
+}
+
+
+cutend("superman", 0)
+
+
+// function reverseSign(num) {
+//     if (typeof num !== "number") {
+// 		return false;
+// 	}
+//     if (Math.sign(Number(num) === 1)
+// 	    -Math.abs(num);
+// 	}
+
+
+// }
+
+//     if (Math.sign(Number(num) === 1)
+// 	   return -Math.abs(num);
+// 	} else {
+// 		return Math.abs(num)
+
+// 	}
+
+
+// console.log(reverseSign("1"))
+
 
 
 
