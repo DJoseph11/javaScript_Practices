@@ -422,6 +422,27 @@ if (hour >= 6 && hour < 12) {
 } else console.log("Good Afternoon.")
 
 
+// let b = 0;
+// let c = 15;
+//
+//
+// checkbandc:
+// 	while(b < 4) {
+// 		console.log(b);
+// 		b++;
+// 		checkc:
+// 			while (c > 4) {
+// 				console.log(c);
+// 				c--;
+// 				if ( c % 2 === 0) {
+// 					continue checkc;
+// 				}
+// 				console.log(c + " is odd.")
+// 			}
+// 		console.log('b = ' + b);
+// 		console.log('c = ' + c);
+//
+// 	}
 
 
 
