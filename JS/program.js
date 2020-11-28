@@ -722,4 +722,60 @@ function reverse(something) {
 
 reverseString("reload devtools");
 
+// another example of reversing strings
+
+function reverse(string) {
+	var strRev = "";
+	for(var i = string.length - 1; i >= 0; i--) {
+		strRev += string[i];
+	}
+	return strRev;
+}
+
+
+reverse("something or other");
+
+//To compare strings alphabetically, use localeCompare(). This returns a negative
+//value if the reference string is lexicographically (alphabetically) before the
+//compared string (the parameter), a positive value if it comes afterwards, and a
+//value of 0 if they are equal.
+
+function check(a , b) {
+	if (a === b) {
+		return 0;
+	}
+	if (a > b) {
+		return 1;
+	}
+	return -1
+}
+
+
+
+var arr = ["Durie", "Bannan", "korosol"];
+arr.sort(function(a,b) {
+	return a.localeCompare(b);
+})
+
+/// rearange the array in alphabetically.
+
+console.log(arr);
+
+
+// Word counter
+
+function wordCount(val) {
+	var wom = val.match(/\S+/g);
+	return {
+		charactersNoSpace : val.replace(/\s+/g, "").length,
+		character         : val.length,
+		words             : wom ? wom.length : 0,
+		lines             : val.split(/\r*\n/).length
+	};
+}
+
+wordCount("Something did happen",
+	"the does this works as well") //nope
+
+wordCount("this can be multiple line of text to count the key of the object")
 
