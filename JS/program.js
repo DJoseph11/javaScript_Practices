@@ -97,7 +97,7 @@ function doSomething() {
 	var helper =
 		(typeof FeatureXYZ !== "undefined");
 	FeatureXYZ :
-		function() {
+		function fdfd() {
 			//// default feature here
 		}
 	var val = helper();
@@ -117,7 +117,7 @@ function doSomething() {
 		var helper =
 			(typeof FeatureXYZ !== "undefined");
 		FeatureXYZ :
-			function() {
+			function drf() {
 				//// default feature here
 			}
 		var val = helper();
@@ -129,7 +129,46 @@ function doSomething() {
 /* The review for this chapter of understand javaScript has seven built in  types boolean, numbers,
 * string, undefined, null, objects and symbol
 * variables dont have types but the value that stored with them do
+
+// The one and only that's true
 *
+*
+Number.isNaN(NaN);
+*
+// Numbers
+*
+Number.isNaN(1);
+Number.isNaN(-2e-4);
+Number.isNaN(Infinity);
+*
+// Values not of type number
+*
+Number.isNaN(true);
+Number.isNaN(false);
+Number.isNaN(null);
+Number.isNaN("");
+Number.isNaN(" ");
+Number.isNaN("45.3");
+Number.isNaN("1.2e3");
+Number.isNaN("Infinity");
+Number.isNaN(new Date);
+Number.isNaN("10$");
+Number.isNaN("hello");
+Number.isNaN(undefined);
+Number.isNaN();
+Number.isNaN(function(){});
+Number.isNaN({});
+Number.isNaN([]);
+Number.isNaN([1]);
+Number.isNaN([1, 2]);
+Number.isNaN([true]);
+
+*
+*
+*
+*
+*
+* *
 * undefined is not the same as undeclared. Undefined, for example, unassigned variables with no value will give undefined
 * undeclared is a name that was not assigned as a variable which if used typeof you will get a reference error. Once
 * the name is assigned it will give "undefined". To get out of that a value would need to be assigned in which case
@@ -598,5 +637,28 @@ const addFunc = function (a, b) {
 document.writeln(addFunc(2, 3));
 
 
+var personArr = [
+	{
+		"personId": 123,
+		"name": "Jhon",
+		"city": "Melbourne", "phoneNo": "1234567890"
+	},
+	{
+		"personId": 124,
+		"name": "Amelia", "city": "Sydney", "phoneNo": "1234567890"
+	},
+	{
+		"personId": 125,
+		"name": "Emily",
+		"city": "Perth", "phoneNo": "1234567890"
+	},
+	{
+		"personId": 126,
+		"name": "Abraham", "city": "Perth", "phoneNo": "1234567890"
+	}
+];
+console.table(personArr, ['name', 'personId']);
+
+// the example above log a table with the property and value in console.
 
 
