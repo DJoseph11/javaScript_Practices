@@ -661,4 +661,26 @@ console.table(personArr, ['name', 'personId']);
 
 // the example above log a table with the property and value in console.
 
+// using instanceof
 
+function sumArg(...arguments)  {
+	if (arguments === 1) {
+		const [firstArg] = arguments;
+		if (firstArg instanceof Array) {
+			return sumArg(...firstArg)
+		}
+	}
+	return arguments.reduce((a, b) => a + b)
+}
+
+sumArg(45, 34, 56)
+
+//null.constructor and undefined.constructor throw an error when accessed
+
+function isNumber(value) {
+	if (value === null || value === undefined) return false
+	return value.constructor === Number
+}
+
+
+console.log(isNumber(undefined), isNumber([]), isNumber(() => 1), isNumber(0))
