@@ -684,3 +684,42 @@ function isNumber(value) {
 
 
 console.log(isNumber(undefined), isNumber([]), isNumber(() => 1), isNumber(0))
+
+
+var objectAtring = new String("Money is ll i ned in thid momnt=");
+
+typeof objectAtring;
+
+typeof objectAtring.valueOf()
+
+// mentioned that this method does not always works
+
+function reverseString(str) {
+	return str.split("").reverse().join("");
+}
+
+
+reverseString("something like this works just fine")
+
+//
+
+function reverseString(str) {
+	return [...String(str)].reverse().join("");
+}
+
+
+reverseString([1, 2, 3, 4, 5])
+
+function reverseString(...arguments) {
+	return [...String(...arguments)].reverse().join("");
+}
+
+reverseString(157858890, 4858584)
+
+function reverse(something) {
+	return [...String(something)].reverse().join("");
+}
+
+reverseString("reload devtools");
+
+
