@@ -882,6 +882,23 @@ addToDone("Exercise 45 is correct.")
 // Exercise 46
 // Write a function definition named removeVowels that takes in string and returns the string without any vowels
 
+function removeVowels(x) {
+	var lower = x;
+//   console.log(lower);
+	var vowel = ["a","e","i", "o", "u"];
+//   console.log(vowel);
+	var word = "";
+	for (let char of lower) {
+		if (vowel.includes(char) !== true) {
+			word += char;
+		}
+	}
+
+	return word;
+}
+
+
+
 assert(removeVowels("banana"), "bnn", "Exercise 46");
 assert(removeVowels("ubuntu"), "bnt", "Exercise 46");
 assert(removeVowels("mango"), "mng", "Exercise 46");
