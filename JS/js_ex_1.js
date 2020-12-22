@@ -909,6 +909,20 @@ addToDone("Exercise 46 is correct.")
 // Exercise 47
 // Write a function definition named startsWithVowel that takes in string and true if the string starts with a vowel
 
+function startsWithVowel(x) {
+	var first = x[0]
+	console.log(first)
+	var vowel = ["a","e","i", "o", "u"];
+	for(let first of x) {
+		if(vowel.includes(first)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+}
+
+
 assert(startsWithVowel("ubuntu"), true, "Exercise 47");
 assert(startsWithVowel("banana"), false, "Exercise 47");
 assert(startsWithVowel("mango"), false, "Exercise 47");
@@ -917,6 +931,20 @@ addToDone("Exercise 47 is correct.")
 
 // Exercise 48
 // Write a function definition named endsWithVowel that takes in string and true if the string ends with a vowel
+
+function endsWithVowel(x) {
+	var first = x.slice(-1);
+	// console.log(first)
+	var vowel = ["a","e","i", "o", "u"];
+	for(let a of first) {
+		if(vowel.includes(a)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+}
 
 
 assert(endsWithVowel("ubuntu"), true, "Exercise 48");
@@ -929,6 +957,30 @@ addToDone("Exercise 48 is correct.")
 // Exercise 49
 // Write a function definition named startsAndEndsWithVowel that takes in string and returns true if the string starts and ends with a vowel
 
+function startsAndEndsWithVowel(x) {
+	var last = x.slice(-1);
+	var first = x[0]
+	console.log(first);
+	console.log(last)
+	var vowel = ["a","e","i", "o", "u"];
+	for(let a of first) {
+		if(vowel.includes(a)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	for(let b of last) {
+		if(vowel.includes(b)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+}
+
 assert(startsAndEndsWithVowel("ubuntu"), true, "Exercise 49");
 assert(startsAndEndsWithVowel("banana"), false, "Exercise 49");
 assert(startsAndEndsWithVowel("mango"), false, "Exercise 49");
@@ -937,6 +989,11 @@ addToDone("Exercise 49 is correct.")
 
 // Exercise 50
 // Write a function definition named first that takes in sequence and returns the first value of that sequence.
+
+function first(x) {
+	return x[0];
+}
+
 
 assert(first("ubuntu"), "u", "Exercise 50");
 assert(first([1, 2, 3]), 1, "Exercise 50");
@@ -949,6 +1006,11 @@ addToDone("Exercise 50 is correct.")
 // Exercise 51
 // Write a function definition named second that takes in sequence and returns the second value of that sequence.
 
+function second(x){
+	return x[1];
+}
+
+
 assert(second("ubuntu"), "b", "Exercise 51");
 assert(second([1, 2, 3]), 2, "Exercise 51");
 assert(second(["JS", "is", "awesome"]), "is", "Exercise 51");
@@ -957,6 +1019,11 @@ addToDone("Exercise 51 is correct.")
 
 // Exercise 52
 // Write a function definition named third that takes in sequence and returns the third value of that sequence.
+
+function third(x) {
+	return x[2];
+}
+
 
 assert(third("ubuntu"), "u", "Exercise 52");
 assert(third([1, 2, 3]), 3, "Exercise 52");
@@ -967,6 +1034,11 @@ addToDone("Exercise 52 is correct.")
 // Exercise 53
 // Write a function definition named forth that takes in sequence and returns the forth value of that sequence.
 
+function forth(x) {
+	return x[3];
+}
+
+
 assert(forth("ubuntu"), "n", "Exercise 53");
 assert(forth([1, 2, 3, 4]), 4, "Exercise 53");
 assert(forth(["JS", "is", "awesome", "right?"]), "right?", "Exercise 53");
@@ -975,6 +1047,13 @@ addToDone("Exercise 53 is correct.")
 
 // Exercise 54
 // Write a function definition named last that takes in sequence and returns the last value of that sequence.
+
+
+function last(x){
+	var last = x.slice(-1)
+	console.log(last);
+	return last[0];
+}
 
 assert(last("ubuntu"), "u", "Exercise 54");
 assert(last([1, 2, 3, 4]), 4, "Exercise 54");
@@ -986,6 +1065,12 @@ addToDone("Exercise 54 is correct.")
 // Exercise 55
 // Write a function definition named secondToLast that takes in sequence and returns the second to last value of that sequence.
 
+function secondToLast(x) {
+	var secLast = x.slice(-2)
+	return secLast[0]
+}
+
+
 assert(secondToLast("ubuntu"), "t", "Exercise 55");
 assert(secondToLast([1, 2, 3, 4]), 3, "Exercise 55");
 assert(secondToLast(["JS", "is", "awesome"]), "is", "Exercise 55");
@@ -995,6 +1080,12 @@ addToDone("Exercise 55 is correct.")
 
 // Exercise 56
 // Write a function definition named thirdToLast that takes in sequence and returns the third to last value of that sequence.
+
+
+function thirdToLast(x) {
+	var secLast = x.slice(-3)
+	return secLast[0]
+}
 
 assert(thirdToLast("ubuntu"), "n", "Exercise 56");
 assert(thirdToLast([1, 2, 3, 4]), 2, "Exercise 56");
@@ -1006,6 +1097,18 @@ addToDone("Exercise 56 is correct.")
 // Exercise 57
 // Write a function definition named firstAndSecond that takes in sequence and returns the first and second value of that sequence as an array
 
+function firstAndSecond(x) {
+	var combine = [];
+	var first = x[0];
+	combine.push(first)
+	console.log(first)
+	var second = x[1];
+	combine.push(second);
+	console.log(second);
+	return combine;
+}
+
+
 assert(firstAndSecond([1, 2, 3, 4]), [1, 2], "Exercise 57");
 assert(firstAndSecond(["JS", "is", "awesome"]), ["JS", "is"], "Exercise 57");
 assert(firstAndSecond(["strawberry", "kiwi", "mango", "guava"]), ["strawberry", "kiwi"], "Exercise 57");
@@ -1014,6 +1117,20 @@ addToDone("Exercise 57 is correct.")
 
 // Exercise 58
 // Write a function definition named firstAndLast that takes in sequence and returns the first and last value of that sequence as an array
+
+
+function firstAndLast(x) {
+	var arrFirst = []
+	var first = x[0];
+	arrFirst.push(first);
+
+	console.log(first)
+	var second = x.slice(-1);
+	var combine = arrFirst.concat(second);
+	console.log(second);
+
+	return combine
+}
 
 assert(firstAndLast([1, 2, 3, 4]), [1, 4], "Exercise 58");
 assert(firstAndLast(["JS", "is", "awesome"]), ["JS", "awesome"], "Exercise 58");
