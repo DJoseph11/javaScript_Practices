@@ -1142,6 +1142,18 @@ addToDone("Exercise 58 is correct.")
 // Exercise 59
 // Write a function definition named firstToLast that takes in sequence and returns the sequence with the first value moved to the end of the sequence.
 
+function firstToLast(x) {
+	var arr = [];
+	var first = x.shift();
+	arr.push(first);
+	console.log(arr);
+	console.log(x);
+	var combine = x.concat(arr);
+	console.log(combine);
+	return combine;
+}
+
+
 assert(firstToLast([1, 2, 3, 4]), [2, 3, 4, 1], "Exercise 59");
 assert(firstToLast(["JS", "is", "awesome"]), ["is", "awesome", "JS"], "Exercise 59");
 assert(firstToLast(["strawberry", "kiwi", "mango", "guava"]), ["kiwi", "mango", "guava", "strawberry"], "Exercise 59");
@@ -1151,6 +1163,18 @@ addToDone("Exercise 59 is correct.")
 
 // Exercise 60
 // Write a function definition named sumAll that takes in sequence of numbers and returns all the numbers added together.
+
+function sumAll(x) {
+	var arrInput = x;
+	var count = 0;
+	for (let a of arrInput) {
+//     console.log(a);
+		count += a
+	}
+// console.log(count)
+	return count;
+}
+
 
 assert(sumAll([1, 2, 3, 4]), 10, "Exercise 60");
 assert(sumAll([3, 3, 3]), 9, "Exercise 60");
@@ -1162,6 +1186,19 @@ addToDone("Exercise 60 is correct.")
 //  Exercise 61
 //  Write a function definition named mean that takes in sequence of numbers and returns the average value
 
+
+function mean(x) {
+	var arrInput = x;
+	var count = 0;
+	for (let a of arrInput) {
+//     console.log(a);
+		count += a
+	}
+// console.log(count)
+	return count / arrInput.length;
+}
+
+
 assert(mean([1, 2, 3, 4]), 2.5, "Exercise 61");
 assert(mean([3, 3, 3]), 3, "Exercise 61");
 assert(mean([1, 5, 6]), 4, "Exercise 61");
@@ -1171,6 +1208,34 @@ addToDone("Exercise 61 is correct.")
 
 // Exercise 62
 // Write a function definition named median that takes in sequence of numbers and returns the average value
+
+
+function median(x){
+	if (x.length % 2 !== 0) {
+		var inputOdd =x.length / 2 - 0.5;
+		return x[inputOdd];
+		console.log(inputOdd)
+	} else {
+		var inputEven =x.length / 2
+		return (x[inputEven] + x[(inputEven - 1)]) / 2
+	}
+
+// var inputEven =x.length / 2
+// return (x[inputEven] + x[(inputEven - 1)]) / 2
+// console.log(inputEven)
+// console.log(x[inputEven])
+// console.log(x[(inputEven - 1)])
+// console.log((x[inputEven] + x[(inputEven - 1)]) / 2 )
+// return x[inputEven] + x[inputEven]
+
+//     for ( let a of input) {
+
+// return x[1];
+// }
+
+}
+
+
 
 assert(median([1, 2, 3, 4, 5]), 3.0, "Exercise 62");
 assert(median([1, 2, 3]), 2.0, "Exercise 62");
@@ -1182,6 +1247,19 @@ addToDone("Exercise 62 is correct.")
 // Exercise 63
 // Write a function definition named maxMinusMin that takes in an array of numbers and returns the difference of the maximum minus theminimum.
 
+function maxMinusMin(x) {
+	var order = x.sort();
+	console.log(order)
+	var Max = x[(order.length - 1)]
+	var Min = x[0];
+	return Max - Min;
+	console.log(Max);
+	console.log(Min);
+	console.log(Max - Min)
+
+}
+
+
 
 assert(maxMinusMin([1, 2, 2, 8, 3, 4]), 7, "Exercise 63");
 assert(maxMinusMin([1, 1, 2, 3, 9]), 8, "Exercise 63");
@@ -1192,6 +1270,17 @@ addToDone("Exercise 63 is correct.")
 // Exercise 64
 // Write a function definition named productOfAll that takes in sequence of numbers and returns the product of multiplying all the numbers together
 
+function productOfAll(x) {
+	var arr = x
+	var count = 1;
+	for ( let a of arr) {
+		count *= a
+		console.log(1)
+	}
+	return count;
+	console.log(count);
+}
+
 assert(productOfAll([1, 2, 3]), 6, "Exercise 64");
 assert(productOfAll([3, 4, 5]), 60, "Exercise 64");
 assert(productOfAll([2, 2, 3, 0]), 0, "Exercise 64");
@@ -1200,6 +1289,13 @@ addToDone("Exercise 64 is correct.")
 
 // Exercise 65
 // Write a function definition named getHighestNumber that takes in sequence of numbers and returns the largest number.
+
+function getHighestNumber(x) {
+	var order = x.sort()
+	var Max = x[(order.length - 1)]
+	return Max;
+}
+
 
 
 assert(getHighestNumber([1, 2, 3]), 3, "Exercise 65");
@@ -1213,6 +1309,13 @@ addToDone("Exercise 65 is correct.")
 // Exercise 66
 // Write a function definition named getSmallestNumber that takes in sequence of numbers and returns the smallest number.
 
+function getSmallestNumber(x) {
+	var order = x.sort()
+	var Max = x[0]
+	return Max;
+}
+
+
 
 assert(getSmallestNumber([1, 2, 3]), 1, "Exercise 66");
 assert(getSmallestNumber([3, 5, 9, 8, 1]), 1, "Exercise 66");
@@ -1222,6 +1325,18 @@ addToDone("Exercise 66 is correct.")
 
 // Exercise 67
 // Write a function definition named onlyOddNumbers that takes in sequence of numbers and returns the odd numbers in an array.
+
+function onlyOddNumbers(x) {
+	var arr = x
+	var box = [];
+	for(let a of arr ) {
+		if( a % 2 !== 0) {
+			box.push(a)
+		}
+	}
+	return box;
+}
+
 
 assert(onlyOddNumbers([1, 2, 3]), [1, 3], "Exercise 67");
 assert(onlyOddNumbers([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]), [-5, -3, -1, 1, 3, 5], "Exercise 67");
@@ -1233,6 +1348,18 @@ addToDone("Exercise 67 is correct.")
 // Exercise 68
 // Write a function definition named onlyEvenNumbers that takes in sequence of numbers and returns the even numbers in an array.
 
+function onlyEvenNumbers(x) {
+	var arr = x
+	var box = [];
+	for(let a of arr ) {
+		if( a % 2 === 0) {
+			box.push(a)
+		}
+	}
+	return box;
+}
+
+
 assert(onlyEvenNumbers([1, 2, 3]), [2], "Exercise 68");
 assert(onlyEvenNumbers([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]), [-4, -2, 2, 4], "Exercise 68");
 assert(onlyEvenNumbers([-4, -3, 1]), [-4], "Exercise 68");
@@ -1241,6 +1368,18 @@ addToDone("Exercise 68 is correct.")
 
 // Exercise 69
 // Write a function definition named onlyPositiveNumbers that takes in sequence of numbers and returns the positive numbers in an array.
+
+function onlyPositiveNumbers(x) {
+	var arr = x
+	var box = [];
+	for(let a of arr ) {
+		if( a > 0) {
+			box.push(a)
+		}
+	}
+	return box;
+}
+
 
 assert(onlyPositiveNumbers([1, 2, 3]), [1, 2, 3], "Exercise 69");
 assert(onlyPositiveNumbers([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]), [1, 2, 3, 4, 5], "Exercise 69");
@@ -1251,6 +1390,18 @@ addToDone("Exercise 69 is correct.")
 // Exercise 70
 // Write a function definition named onlyNegativeNumbers that takes in sequence of numbers and returns the negative numbers in an array.
 
+function onlyNegativeNumbers(x) {
+	var arr = x
+	var box = [];
+	for(let a of arr ) {
+		if( a < 0) {
+			box.push(a)
+		}
+	}
+	return box;
+}
+
+
 assert(onlyNegativeNumbers([1, 2, 3]), [], "Exercise 70");
 assert(onlyNegativeNumbers([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]), [-5, -4, -3, -2, -1], "Exercise 70");
 assert(onlyNegativeNumbers([-4, -3, 1]), [-4, -3], "Exercise 70");
@@ -1260,6 +1411,17 @@ addToDone("Exercise 70 is correct.");
 
 // Exercise 71
 // Write a function definition named hasEvens that takes in sequence of numbers and returns true if there are any even numbers in the sequence
+
+function hasEvens(x) {
+	var arr = onlyEvenNumbers(x)
+	console.log(arr)
+	if (arr.length === 0) {
+		return false;
+	} else {
+		return true;
+	}
+
+}
 
 assert(hasEvens([1, 2, 3]), true, "Exercise 71");
 assert(hasEvens([2, 5, 6]), true, "Exercise 71");
@@ -1272,6 +1434,21 @@ addToDone("Exercise 71 is correct.");
 // Exercise 72
 // Write a function definition named countEvens that takes in sequence of numbers and returns the number of even numbers
 
+function countEvens(x) {
+	var arr = x;
+	var count = 0;
+	for (let a of arr) {
+//     console.log(a)
+		if (a % 2 === 0) {
+			count++
+		}
+	}
+	console.log(count)
+	return count
+}
+
+
+
 assert(countEvens([1, 2, 3]), 1, "Exercise 72");
 assert(countEvens([2, 5, 6]), 2, "Exercise 72");
 assert(countEvens([3, 3, 3]), 0, "Exercise 72");
@@ -1281,6 +1458,18 @@ addToDone("Exercise 72 is correct.")
 
 // Exercise 73
 // Write a function definition named hasOdds that takes in sequence of numbers and returns true if there are any odd numbers in the sequence
+
+function hasOdds(x) {
+	var arr = onlyOddNumbers(x)
+	console.log(arr)
+	if (arr.length === 0) {
+		return false;
+	} else {
+		return true;
+	}
+
+}
+
 
 assert(hasOdds([1, 2, 3]), true, "Exercise 73");
 assert(hasOdds([2, 5, 6]), true, "Exercise 73");
@@ -1292,6 +1481,19 @@ addToDone("Exercise 73 is correct.")
 // Exercise 74
 // Write a function definition named countOdds that takes in sequence of numbers and returns a count of the any odd numbers in the sequence
 
+function countOdds(x) {
+	var arr = x;
+	var count = 0;
+	for (let a of arr) {
+//     console.log(a)
+		if (a % 2 !== 0) {
+			count++
+		}
+	}
+	console.log(count)
+	return count
+}
+
 assert(countOdds([1, 2, 3]), 2, "Exercise 74");
 assert(countOdds([2, 5, 6]), 1, "Exercise 74");
 assert(countOdds([3, 3, 3]), 3, "Exercise 74");
@@ -1302,6 +1504,19 @@ addToDone("Exercise 74 is correct.")
 // Exercise 75
 // Write a function definition named countNegatives that takes in sequence of numbers and returns a count of the number of negative numbers
 
+function countNegatives(x) {
+	var arr = x;
+	var count = 0;
+	for (let a of arr) {
+//     console.log(a)
+		if (a < 0) {
+			count++
+		}
+	}
+	console.log(count)
+	return count
+}
+
 assert(countNegatives([1, -2, 3]), 1, "Exercise 75");
 assert(countNegatives([2, -5, -6]), 2, "Exercise 75");
 assert(countNegatives([3, 3, 3]), 0, "Exercise 75");
@@ -1310,6 +1525,19 @@ addToDone("Exercise 75 is correct.")
 
 // Exercise 76
 // Write a function definition named countPositives that takes in sequence of numbers and returns a count of the number of positive numbers
+
+function countPositives(x) {
+	var arr = x;
+	var count = 0;
+	for (let a of arr) {
+//     console.log(a)
+		if (a > 0) {
+			count++
+		}
+	}
+	console.log(count)
+	return count
+}
 
 assert(countPositives([1, -2, 3]), 2, "Exercise 76");
 assert(countPositives([2, -5, -6]), 1, "Exercise 76");
@@ -1320,6 +1548,15 @@ addToDone("Exercise 76 is correct.")
 
 // Exercise 77
 // Write a function definition named onlyPositiveEvens that takes in sequence of numbers and returns an array containing all the positive evens from the sequence
+
+function onlyPositiveEvens(x) {
+	var posCount = onlyPositiveNumbers(x);
+	console.log(posCount)
+	var even = onlyEvenNumbers(posCount);
+	console.log(even)
+	return even
+}
+
 
 assert(onlyPositiveEvens([1, -2, 3]), [], "Exercise 77");
 assert(onlyPositiveEvens([2, -5, -6]), [2], "Exercise 77");
