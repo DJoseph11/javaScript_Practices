@@ -1568,6 +1568,13 @@ addToDone("Exercise 77 is correct.")
 // Exercise 78
 // Write a function definition named onlyPositiveOdds that takes in sequence of numbers and returns an array containing all the positive odd numbers from the sequence
 
+function onlyPositiveOdds(x) {
+	var posCount = onlyPositiveNumbers(x);
+	var odd = onlyOddNumbers(posCount);
+	return odd;
+}
+
+
 assert(onlyPositiveOdds([1, -2, 3]), [1, 3], "Exercise 78");
 assert(onlyPositiveOdds([2, -5, -6]), [], "Exercise 78");
 assert(onlyPositiveOdds([3, 3, 4, 6]), [3, 3], "Exercise 78");
@@ -1577,6 +1584,15 @@ addToDone("Exercise 78 is correct.")
 
 // Exercise 79
 // Write a function definition named onlyNegativeEvens that takes in sequence of numbers and returns an array containing all the negative even numbers from the sequence
+
+function onlyNegativeEvens(x) {
+	var posCount = onlyNegativeNumbers(x);
+	console.log(posCount)
+	var even = onlyEvenNumbers(posCount);
+	console.log(even)
+	return even
+}
+
 
 assert(onlyNegativeEvens([1, -2, 3]), [-2], "Exercise 79");
 assert(onlyNegativeEvens([2, -5, -6]), [-6], "Exercise 79");
@@ -1588,6 +1604,13 @@ addToDone("Exercise 79 is correct.")
 // Exercise 80
 // Write a function definition named onlyNegativeOdds that takes in sequence of numbers and returns an array containing all the negative odd numbers from the sequence
 
+function onlyNegativeOdds(x) {
+	var posCount = onlyNegativeNumbers(x);
+	var odd = onlyOddNumbers(posCount);
+	return odd;
+}
+
+
 assert(onlyNegativeOdds([1, -2, 3]), [], "Exercise 80");
 assert(onlyNegativeOdds([2, -5, -6]), [-5], "Exercise 80");
 assert(onlyNegativeOdds([3, 3, 4, 6]), [], "Exercise 80");
@@ -1598,6 +1621,20 @@ addToDone("Exercise 80 is correct.")
 // Exercise 81
 // Write a function definition named shortestString that takes in an array of strings and returns the shortest string in the array.
 
+function shortestString(x) {
+	var reduceString = x.reduce(function(a,b) {
+		console.log(a)
+		if (a.length < b.length) {
+			return a;
+		} else {
+			return b;
+		}
+	});
+	return reduceString;
+}
+
+
+
 assert(shortestString(["kiwi", "mango", "strawberry"]), "kiwi", "Exercise 81");
 assert(shortestString(["hello", "everybody"]), "hello", "Exercise 81");
 assert(shortestString(["mary", "had", "a", "little", "lamb"]), "a", "Exercise 81");
@@ -1606,6 +1643,19 @@ addToDone("Exercise 81 is correct.")
 
 // Exercise 82
 // Write a function definition named longestString that takes in sequence of strings and returns the longest string in the array.
+
+function longestString(x) {
+	var reduceString = x.reduce(function(a,b) {
+		console.log(a)
+		if (a.length > b.length) {
+			return a;
+		} else {
+			return b;
+		}
+	});
+	return reduceString;
+}
+
 
 assert(longestString(["kiwi", "mango", "strawberry"]), "strawberry", "Exercise 82");
 assert(longestString(["hello", "everybody"]), "everybody", "Exercise 82");
@@ -1616,6 +1666,17 @@ addToDone("Exercise 82 is correct.")
 // Exercise 83
 // Write a function definition named getUniqueValues that takes in an array and returns an with only the unique values from that array.
 
+function getUniqueValues(x) {
+	var arr = x;
+	var box = [];
+	for (let i of arr) {
+		if(box.indexOf(i) === -1) {
+			box.push(i)
+		}
+	}
+	return box;
+}
+
 assert(getUniqueValues(["ant", "ant", "mosquito", "mosquito", "ladybug"]), ["ant", "mosquito", "ladybug"], "Exercise 83");
 assert(getUniqueValues(["b", "a", "n", "a", "n", "a", "s"]), ["b", "a", "n", "s"], "Exercise 83");
 assert(getUniqueValues(["mary", "had", "a", "little", "lamb", "little", "lamb", "little", "lamb"]), ["mary", "had", "a", "little", "lamb"], "Exercise 83");
@@ -1624,6 +1685,16 @@ addToDone("Exercise 83 is correct.")
 
 // Exercise 84
 // Write a function definition named elementsTimesTwo that takes in an array of numbers and returns an array with each value multiplied by 2.
+
+function elementsTimesTwo(x) {
+	var arr = x;
+	var box = [];
+	for (let i of arr) {
+		box.push(i * 2);
+	}
+	return box;
+}
+
 
 
 assert(elementsTimesTwo([1, 2, 3]), [2, 4, 6], "Exercise 84")
@@ -1635,6 +1706,20 @@ addToDone("Exercise 84 is correct.")
 // Exercise 85
 // Write a function named flatten that takes in an array of arrays. Return the flattened array.
 
+function flatten(x) {
+	var arr = x;
+	var box = [];
+	return arr.reduce(function(a, b) {
+		return a.concat(b);
+//         console.log(a)
+//         console.log(b)
+//         console.log(a.concat(b))
+
+	})
+
+}
+
+
 
 assert(flatten([[1, 2], [3, 4], [5, 6]]), [1, 2, 3, 4, 5, 6], "Exercise 85");
 assert(flatten([[1, 2, 3], [1, 2, 3], [1, 2, 3]]), [1, 2, 3, 1, 2, 3, 1, 2, 3], "Exercise 85");
@@ -1645,6 +1730,15 @@ addToDone("Exercise 85 is correct.")
 
 // Exercise 86
 // Write a function definition named addOneToArray that adds one to every number in an array
+
+function addOneToArray(x) {
+	var arr = x;
+	var box = [];
+	for (let i of arr) {
+		box.push(i + 1);
+	}
+	return box;
+}
 
 assert(addOneToArray([1, 2, 3]), [2, 3, 4], "Exercise 86");
 assert(addOneToArray([4, 4, 4]), [5, 5, 5], "Exercise 86");
@@ -1673,6 +1767,12 @@ const thomasPaper = {
 // Exercise 87
 // Write a function named getPaperTitle that takes in a object and returns the title property
 
+
+function getPaperTitle(x) {
+	return x.title;
+}
+
+
 assert(getPaperTitle(tukeyPaper), "The Future of Data Analysis", "Exercise 87");
 assert(getPaperTitle(thomasPaper), "A mathematical model of glutathione metabolism", "Exercise 87");
 addToDone("Exercise 87 is correct.")
@@ -1680,6 +1780,11 @@ addToDone("Exercise 87 is correct.")
 
 // Exercise 88
 // Write a function named getYearPublished that takes in an objects and returns the value behind the "year_published" key.
+
+function getYearPublished(x) {
+	return x.year_published;
+}
+
 
 assert(getYearPublished(tukeyPaper), 1962, "Exercise 88");
 assert(getYearPublished(thomasPaper), 2008, "Exercise 88");
@@ -1696,6 +1801,12 @@ const book = {
 // Exercise 89
 // Write a function named getPrice that takes in a object and returns the price
 
+function getPrice(x) {
+	return x.price;
+}
+
+
+
 assert(getPrice(book), 36.99, "Exercise 89");
 addToDone("Exercise 89 is complete.")
 
@@ -1703,6 +1814,10 @@ addToDone("Exercise 89 is complete.")
 
 // Exercise 90
 // Write a function named getBookAuthor that takes in a object (the above declared book variable) and returns the author's name
+
+function getBookAuthor(x) {
+	return x.author;
+}
 
 
 assert(getBookAuthor(book), "Frances Buontempo", "Exercise 90");
@@ -1739,6 +1854,11 @@ const books = [
 // Exercise 91
 // Write a function named getNumberOfBooks that takes in a array of objects and returns the number of objects in that array.
 
+function getNumberOfBooks(x) {
+	return x.length;
+}
+
+
 assert(getNumberOfBooks(books), 4, "Exercise 91");
 addToDone("Exercise 91 is complete.")
 
@@ -1747,12 +1867,29 @@ addToDone("Exercise 91 is complete.")
 // Exercise 92
 // Write a function named totalOfBookPrices that takes in a array of objects and returns the sum total of all the book prices added together
 
+function totalOfBookPrices(x) {
+	var total = 0
+	for (let i of x) {
+		// console.log(i.price)
+		total += i.price
+	}
+	return total;
+	// console.log(total)
+}
+
+
 assert(totalOfBookPrices(books), 122.9, "Exercise 92")
 addToDone("Exercise 92 is complete.")
 
 
 // Exercise 93
 // Write a function named getAverageBookPrice that takes in a array of objects and returns the average book price.
+
+function getAverageBookPrice(x) {
+	var bookTotal = totalOfBookPrices(x)
+	return bookTotal / x.length;
+}
+
 
 assert(getAverageBookPrice(books), 30.725, "Exercise 93");
 addToDone("Exercise 93 is complete.")
@@ -1761,6 +1898,24 @@ addToDone("Exercise 93 is complete.")
 // Exercise 94
 // Write a function called highestPriceBook that takes in the above defined array of objects "books" and returns the object containing the title, price, and author of the book with the highest priced book.
 // Hint: Much like sometimes start functions with a variable set to zero, you may want to create a object with the price set to zero to compare to each object's price in the array
+
+function highestPriceBook(x) {
+	return x.reduce(function(a, b) {
+		if (a.price > b.price) {
+			// console.log(a)
+			// console.log(b)
+			return a;
+		} else {
+			return b;
+		}
+		// console.log(1)
+	})
+//   for ( let i of x) {
+//     console.log(i.price)
+//   }
+
+}
+
 
 assert(highestPriceBook(books), {
 	"title": "The Visual Display of Quantitative Information",
@@ -1775,6 +1930,24 @@ addToDone("Exercise 94 is complete")
 // Exercise 95
 // Write a function called lowestPriceBook that takes in the above defined array of objects "books" and returns the object containing the title, price, and author of the book with the lowest priced book.
 // Hint: Much like sometimes start functions with a variable set to zero or float('inf'), you may want to create a object with the price set to float('inf') to compare to each object in the array
+
+function lowestPriceBook(x) {
+	return x.reduce(function(a, b) {
+		if (a.price < b.price) {
+			// console.log(a)
+			// console.log(b)
+			return a;
+		} else {
+			return b;
+		}
+		// console.log(1)
+	})
+//   for ( let i of x) {
+//     console.log(i.price)
+//   }
+
+}
+
 
 
 assert(lowestPriceBook(books), {
@@ -1821,6 +1994,11 @@ const shoppingCart = {
 // Write a function named getTaxRate that takes in the above shopping cart as input and returns the tax rate.
 // Hint: How do you access a key's value on a object? The tax rate is one key of the entire shoppingCart object.
 
+function getTaxRate(x) {
+	return x.tax;
+}
+
+
 assert(getTaxRate(shoppingCart), .08, "Exercise 96");
 addToDone("Exercise 96 is complete")
 
@@ -1829,6 +2007,11 @@ addToDone("Exercise 96 is complete")
 // Exercise 97
 // Write a function named numberOfItemTypes that takes in the shopping cart as input and returns the number of unique item types in the shopping cart.
 // We're not yet using the quantity of each item, but rather focusing on determining how many different types of items are in the cart.
+
+function numberOfItemTypes(x) {
+	return x.items.length;
+}
+
 
 assert(numberOfItemTypes(shoppingCart), 5, "Exercise 97");
 addToDone("Exercise 97 is complete.")
@@ -1839,6 +2022,17 @@ addToDone("Exercise 97 is complete.")
 // Write a function named totalNumberOfItems that takes in the shopping cart as input and returns the total number all item quantities.
 // This should return the sum of all of the quantities from each item type
 
+function totalNumberOfItems(x) {
+	var total = 0;
+	for (let i of x.items) {
+		total += i.quantity;
+	}
+	return total;
+	console.log(total)
+}
+
+
+
 assert(totalNumberOfItems(shoppingCart), 17, "Exercise 98");
 addToDone("Exercise 98 is complete.")
 
@@ -1847,6 +2041,16 @@ addToDone("Exercise 98 is complete.")
 // Exercise 99
 // Write a function named getAverageItemPrice that takes in the shopping cart as an input and returns the average of all the item prices.
 // Hint - This should determine the total price divided by the number of types of items. This does not account for each item type's quantity.\
+
+function getAverageItemPrice(x) {
+	var total = 0;
+	for (let i of x.items) {
+		total += i.price;
+	}
+	return total / x.items.length;
+	console.log(total)
+}
+
 
 assert(getAverageItemPrice(shoppingCart), 2.1420000000000003, "Exercise 99");
 addToDone("Exercise 99 is complete.")
@@ -1866,6 +2070,22 @@ addToDone("Exercise 100 is complete.")
 // Be sure to do this as programmatically as possible.
 // Hint: Similarly to how we sometimes begin a function with setting a variable to zero, we need a starting place:
 // Hint: Consider creating a variable that is a object with the keys "price" and "quantity" both set to 0. You can then compare each item's price and quantity total to the one from "most"
+
+function mostSpentOnItem(x) {
+	var stored = x.items;
+	console.log(stored.reduce(function(a, b) {
+		if (a.quantity > b.quantity) {
+			return a;
+		} else {
+			return b;
+		}
+
+	}))
+	console.log(stored)
+	console.log(x.items[0].quantity)
+}
+
+
 
 assert(mostSpentOnItem(shoppingCart), {
 	"title": "chocolate",
