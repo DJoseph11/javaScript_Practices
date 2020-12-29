@@ -1569,3 +1569,197 @@
 //
 //
 
+
+
+
+/// The object person has properties and methods inside the function code
+
+function person(firstname, lastname, make, model, year, miles) {
+    this.firstname = firstname;
+    this.lastname = lastname;
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this,miles = miles;
+    console.log("yes");
+
+}
+
+// Using prototype we can add new properties to the person prototype
+
+person.prototype.getFullName = function() {
+    return this.firstname + " " + this.lastname;
+}
+
+// The variable Mark creates a new object that pass the arguments of the original function of person
+
+var mark = new person(
+    "Mark",
+    "Luke", 
+    "Chevrolet", 
+    "Silverado", 
+    "2015", 
+    "50,000"
+    );
+
+ console.log(mark);
+ console.log(mark.getFullName())
+
+ // By logging line 1605 we get the properties of using this.(property)
+
+
+ // and below we have the new property added the prototype of person with getFormalName
+ person.prototype.getFormalName = function () {
+     return this.lastname + ", " + this.firstname;
+ }
+
+ console.log(mark.getFormalName());
+
+person.prototype.getMakeAndModel = function () {
+    return this.make + " and the model is a " + this.model
+}
+
+var male = person.prototype.sex = function (sex) {
+   return "male";
+}
+
+console.log(mark.getMakeAndModel(), mark.sex(" is also a male") )
+
+person.prototype.DOB = function (DOB) {
+    return "Mr " + mark.getFormalName() + " is a " + mark.sex(male) + ", was born on " + DOB + " and owns a " + this.getMakeAndModel()+ ".";
+}
+
+
+console.table(mark.DOB("09/11/1986"));
+
+//Have the basic understand of having using a function to call a function that acts as a factory
+
+// function whendone(callback) {
+//     callback()
+// }
+
+
+// whendone(function() {
+//     console.log("dine");
+// })
+
+// whendone(function() {
+//     console.log("All done");
+// })
+
+// whendone(function() {
+//     console.log("Loki");
+// })
+
+
+
+var person = {
+    firstname: "May",
+    lastname: "kay",
+    getFullName: function() {
+        var fullname = this.firstname + " " + this.lastname;
+        return fullname;
+    }
+}
+
+var logName = function(lang1,lang2) {
+    console.log("Logged: " + this.getFullName())
+}.bind(person)
+
+
+logName()
+
+// Funtional Programming
+
+// first calss functions are functions that behave like object
+
+var arr1 = [1, 2, 3];
+
+var arr2 = [];
+
+for (var i = 0; i < arr1.length; i++) {
+    arr2.push(arr1[i] * 2);
+}
+
+console.log(arr2)
+
+
+function mapForEach(arr, func) {
+    var newArray = [];
+    for (var i = 0; i < arr.length; i++) {
+        newArray.push(
+            func(arr[i])
+        );
+    }
+    return newArray;
+}
+
+
+var arr3 = mapForEach( arr1, function(item) {
+    return item * 2;
+});
+
+console.log(arr3)
+
+var arr4 = ["dvarlot", "lucas", "Mandy" , "Joek"];
+
+function mapForEach2(arr, func) {
+    var newArray = [];
+    for(var i = 0; i < arr.length; i++) {
+        newArray.push(
+            func(arr[i])
+        )
+    }
+    return newArray;
+}
+
+var arr5 = mapForEach2(arr4, function(item) {
+    return item.toUpperCase().slice(0, 1)
+})
+
+
+var checkPastLiimit = function(limiter, item) {
+    return item > limiter;
+}
+
+console.log(arr5);
+
+var limit = function(limiter) {
+    return function(limiter, item) {
+        return item > limiter;
+}.bind(this, limiter)
+
+}; 
+
+var array = [
+    {
+        key: "one",
+        value: 1
+    }, {
+        key: "two",
+        value: 2
+    }, {
+        key: "three",
+        value: 3
+    }
+];
+
+
+array.reduce(function(obj, current) {
+    obj[current.key] = current.value;
+    return obj;
+}, [])
+
+console.logo(obj)
+
+
+
+
+
+
+
+
+
+
+
+
