@@ -278,3 +278,77 @@ console.log(values.splice(i, 0,6,7,8));
 var values = [1, 2, 4, 5, 3]; 
 var i = values.length + 1; 
 values.splice(i, 0, 6, 7, 8);
+
+
+// REMOVING ELEMENTS USING FILTER
+
+// THe filter takes in the array filter it add a callback function
+// with the condition of passing through the items in the array
+// as long as the array not contain the number 2
+// ***console.log(values.filter(function(val) { return val !== 2;}))
+
+// ***// works the same way with other conditions
+// console.log(values.filter(function(val) { return val % 2 === 0;}))
+
+
+
+
+
+// using the .entries() method creates a new array contain a key value pair
+// for each index.
+var letters = ["Money", "Cars", "Local", "Rupert"];
+
+// using a for loop for the letters items
+for(const[index, items] of letters.entries()) {
+    console.log(index, items)
+}
+
+
+//FlATTENING ARRAYS
+
+var flat = [1, 2, 4, 5, 3,[1, 2,[1, 2,[1, 2, 4, 5, 3], 4, 5, 3], 4, 5, 3]];
+
+function flatten(arr) {
+    return [].concat(...arr);
+}
+
+// same thing as above one use spread one does not
+
+function flatten_2(flat) {
+    return [].concat.apply([], flat);
+}
+
+console.log(flatten(flat));
+
+
+// console.log(flatten_2(flat));
+
+
+// Above the out is the first couple of the array flatten and whats suppose to be 
+// the main array still contain arrays withing arrays
+
+
+// Below theres a big difference of the ouput. This flatten the array completely
+
+console.log(String(flat).split(",").map(Number));
+// var flatten_3 = String(flat).split(",").map(Number)
+// console.log(flatten_3);
+
+
+//Object keys and values
+
+var testObject = {
+    make: "Chevrolet",
+    model: "Silverado",
+    year: "2017"
+}
+
+// the process it to use a for loop to push new items into an new array
+
+
+
+var array = [];
+for(var carObject in testObject) {
+
+    array.push([carObject, testObject[carObject]]) 
+    }
