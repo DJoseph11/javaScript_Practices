@@ -250,7 +250,7 @@ console.log(spreadArr)
 // numbers string I made 
 
 
-// REMOVING ELEMENTS USING SLICE
+// REMOVING ELEMENTS USING SPLICE
 
 var values = [-4,-6,-2,1,2,3,4,5,6,7,4];
 // the code below defining the function of i
@@ -269,7 +269,7 @@ if( i >= 0) {
 }
 
 
-// ADDING ELEMENTS USING SLICE
+// ADDING ELEMENTS USING SPLICE
 
 // the code below does not work
 var i = values.length + 1;
