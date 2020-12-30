@@ -248,3 +248,33 @@ console.log(spreadArr)
 
 // above is experimenting with the spread operator to make an array out of those
 // numbers string I made 
+
+
+// REMOVING ELEMENTS USING SLICE
+
+var values = [-4,-6,-2,1,2,3,4,5,6,7,4];
+// the code below defining the function of i
+// where the number is located is the indicator 
+//of where to start to give ou the output
+
+var i = values.indexOf(1);
+
+// the if statement job is to make sure the items in the array only output the  
+// positive numbers
+
+if( i >= 0) {
+    // the code below by splicing it that way the output is an array based on 
+    // on the number of the second argument or value
+    values.splice(i, 2)
+}
+
+
+// ADDING ELEMENTS USING SLICE
+
+// the code below does not work
+var i = values.length + 1;
+console.log(values.splice(i, 0,6,7,8));
+
+var values = [1, 2, 4, 5, 3]; 
+var i = values.length + 1; 
+values.splice(i, 0, 6, 7, 8);
