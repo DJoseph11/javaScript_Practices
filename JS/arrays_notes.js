@@ -184,3 +184,67 @@ num.sort(function(a, b) {
     return (a & 1) - (b & 1) || a - b;
 });
 
+//Array iteration
+
+
+for (var i = 0;i < num.length; i++) {
+    console.log(num[i]);
+}
+
+// Destructuring an array
+
+function area(length, height) {
+    return length * height / 2;
+}
+
+
+
+area(15, 57);
+
+// Below is the way of making two array into an object with key value pair
+
+var columns = ["Date", "Number", "Size", "Location", "Age"]; 
+var rows = ["2001", "5", "Big", "Sydney", "25"];
+
+
+var result = rows.reduce(function(result, field, index) {
+    result[columns[index]] = field;
+    return result;
+}, {});
+
+console.log(result);
+
+// below is the same result as the one above just the property change but
+// the fundamental is on how to take two arrays and make key and value pair
+
+var gameColumns = ["Title", "Release Date", "Developer", "Console_1", "Console_2"];
+var gameRows = ["Final Fantasy VII", "January 31, 1997", "Square", "Playstation", "Default"];
+
+var gameResult = gameRows.reduce(function(gameResult, field, index) {
+    gameResult[gameColumns[index]] = field;
+    return gameResult;
+}, {})
+
+console.log(gameResult);
+
+// using spread
+
+let spreadArr = [..."183949837649"].map(x => parseInt(x)).sort( // turn into array
+       // put items in array in accending order
+        function(a, b) {
+            return a - b;
+        }
+        // finding out unique values in the array and push them into a new array
+    ).reduce(function(a, b) {
+        if(a.indexOf(b) === -1) {
+            a.push(b);
+        }
+        return a;
+        // the new arra for result
+    }, [])
+
+
+console.log(spreadArr)
+
+// above is experimenting with the spread operator to make an array out of those
+// numbers string I made 
