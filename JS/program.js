@@ -1752,9 +1752,41 @@ array.reduce(function(obj, current) {
 
 console.logo(obj)
 
+array.reduce(function(obj, current) {
+    obj[current.key] = current.value;
+    return obj;
+}, [])
+
+console.logo(obj)
 
 
+function map(list, func) {
+    return list.reduce(function(newList, item) {
+        return newList.concat(func(item));
+    }, []);
+}
 
+map([5,6,7,8,4,], function(n) {
+    return n % 2 == 0 ? n * 2 : n * 1;
+})
+
+
+//December 30th
+
+
+var person_2 = {
+    firstName: "Default",
+    lastname: "Default",
+    greet: function() {
+        return "hi" + firstname
+    }
+}
+
+var mark = Object.create(person_2);
+mark.firstName = "Mark";
+mark.lastName = "Gloria";
+
+console.log(mark)
 
 
 
