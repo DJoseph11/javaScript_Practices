@@ -39,7 +39,7 @@ console.log(user_2);
 for (let property in obj) {
     // Always check if an object has a property
     if (obj.hasOwnProperty(property)) {
-        // do studd
+        // do stuff
     }
 }
 
